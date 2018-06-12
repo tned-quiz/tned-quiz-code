@@ -1,0 +1,67 @@
+/* ======= TEXTE A TROU ======= */
+.custom_select{
+  display: inline-block;
+  width: 10rem;
+  position: relative;
+  /*top: .5rem;
+  height: 2rem;
+  border: 1px solid var(--main-ft-color);
+  border-radius: 1rem;*/
+  font-size: 1rem;
+}
+/*hide default select*/
+.custom_select select{
+  display: none;
+}
+
+/*custom .select selected option*/
+.select-selected{
+  background-color: var(--secondary-color);
+}
+/*custom arrow*/
+.select-selected::after{
+  position: absolute;
+  content: "";
+  top: 1rem;
+  right: .5rem;
+  width: 0;
+  height: 0;
+  border: .5rem solid transparent;
+  border-color: var(--main-ft-color) transparent transparent transparent;
+}
+/*move arrow when select*/
+.select-selected.select-arrow-active:after {
+  border-color: transparent transparent var(--main-ft-color) transparent;
+  top: .5rem;
+}
+/*style items option*/
+.select-items div,.select-selected {
+  color: var(--main-ft-color);
+  padding: .5rem 1rem;
+  border: 1px solid transparent;
+  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+  cursor: pointer;
+}
+/*style items*/
+.select-items {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+  background-color: var(--main-bg-color);
+}
+/*.select-items:nth-child(1n+1){
+  background-color: var(--secondary-color);
+}
+.select-items:nth-child(2n+1){
+  background-color: var(--primary-color);
+}*/
+
+/*hide the items when the select box is closed:*/
+.select-hide {
+  //display: none;
+}
+.select-items div:hover, .same-as-selected {
+  background-color: rgba(0, 0, 0, 0.1);
+}
