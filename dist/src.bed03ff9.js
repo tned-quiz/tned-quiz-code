@@ -98,7 +98,7 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   // Override the current require with this new one
   return newRequire;
-})({22:[function(require,module,exports) {
+})({21:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -340,7 +340,7 @@ function getRandomQ(max) {
 }
 
 exports.qCorpusAleat = qCorpusAleat;
-},{}],26:[function(require,module,exports) {
+},{}],24:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -368,7 +368,7 @@ function headBoxQuiz(q, qGp, headQuiz, rangQ, nbreQ) {
 }
 
 exports.headBoxQuiz = headBoxQuiz;
-},{}],27:[function(require,module,exports) {
+},{}],25:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -385,7 +385,7 @@ function intituleQuiz(intitule, key) {
 }
 
 exports.intituleQuiz = intituleQuiz;
-},{}],28:[function(require,module,exports) {
+},{}],26:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -424,7 +424,7 @@ function assetQuiz(q, url, key) {
 }
 
 exports.assetQuiz = assetQuiz;
-},{}],35:[function(require,module,exports) {
+},{}],36:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -473,7 +473,7 @@ function imgCheck(imgClic, qType) {
 }
 
 exports.imgCheck = imgCheck;
-},{}],36:[function(require,module,exports) {
+},{}],35:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -531,7 +531,7 @@ function labelCheck(divRep, qType) {
 }
 
 exports.labelCheck = labelCheck;
-},{}],38:[function(require,module,exports) {
+},{}],37:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -687,7 +687,7 @@ function repQr(q, qName, urlImg, inpuType, key, divRep) {
 }
 
 exports.repQr = repQr;
-},{"../../viewStyle/imgCheck":35,"../../viewStyle/labelCheck":36,"../../viewStyle/labelCheckTypeC":38}],39:[function(require,module,exports) {
+},{"../../viewStyle/imgCheck":36,"../../viewStyle/labelCheck":35,"../../viewStyle/labelCheckTypeC":37}],39:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -735,7 +735,7 @@ function repCurseur(q, qName, inpuType, divRep) {
 }
 
 exports.repCurseur = repCurseur;
-},{"../../viewStyle/cursorValue":39}],37:[function(require,module,exports) {
+},{"../../viewStyle/cursorValue":39}],38:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -878,7 +878,7 @@ function repOrdLst(q, divRep) {
 }
 
 exports.repOrdLst = repOrdLst;
-},{"../../viewStyle/dragDropOrdLst":37}],42:[function(require,module,exports) {
+},{"../../viewStyle/dragDropOrdLst":38}],41:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -976,7 +976,7 @@ function dragDrop(dragSpan, gameplay, divRep) {
 }
 
 exports.dragDrop = dragDrop;
-},{}],41:[function(require,module,exports) {
+},{}],40:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1037,138 +1037,15 @@ function repDragDrop(q, qName, inpuType, divRep) {
 }
 
 exports.repDragDrop = repDragDrop;
-},{"../../viewStyle/dragDrop":42}],40:[function(require,module,exports) {
+},{"../../viewStyle/dragDrop":41}],34:[function(require,module,exports) {
 "use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-function customSelect(divRep) {
-
-  //custom-select
-  var divCustomBox = divRep.getElementsByClassName("custom_select");
-  var selElmnt, divOptSel, divOptBox, divOpt;
-
-  //creat divCustom content selElmnt (tag select)
-  for (var i = 0; i < divCustomBox.length; i++) {
-    //get select
-    selElmnt = divCustomBox[i].getElementsByTagName("select")[0];
-
-    //for each element, create a new DIV that will act as the selected item:
-    divOptSel = document.createElement("DIV");
-    divOptSel.className = "select-selected";
-    //creat empty option first (index0)
-    var opt = document.createElement("OPTION");
-    opt.text = "...";
-    selElmnt.options.add(opt, 0);
-
-    divOptSel.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
-    divCustomBox[i].appendChild(divOptSel);
-
-    /*for each element, create a new DIV that will contain the option list:*/
-    divOptBox = document.createElement("DIV");
-    divOptBox.className = "select-items select-hide";
-
-    //Add OPTIONS
-    for (var j = 1; j < selElmnt.length; j++) {
-      /*for each option in the original select element,
-      create a new DIV that will act as an option item:*/
-      divOpt = document.createElement("DIV");
-      divOpt.innerHTML = selElmnt.options[j].innerHTML;
-
-      //add EVENT OPTION SELECTED
-      divOpt.addEventListener("click", function (e) {
-        console.log("divOpt Clic");
-        console.log(divOpt);
-        /*when an item is clicked, update the original select box,
-        and the selected item:*/
-        var y, i, k, s, h;
-        //get parent select
-        s = this.parentNode.parentNode.getElementsByTagName("select")[0];
-        //get option selected -> divOptSel
-        h = this.parentNode.previousSibling;
-
-        //Update divOptBox & divOptSel with selected option
-        for (i = 0; i < s.length; i++) {
-          if (s.options[i].innerHTML == this.innerHTML) {
-            //get opt selected index & add to divOptSel selected
-            s.selectedIndex = i;
-            h.innerHTML = this.innerHTML;
-
-            y = this.parentNode.getElementsByClassName("same-as-selected");
-            for (k = 0; k < y.length; k++) {
-              y[k].removeAttribute("class");
-            }
-            this.className = "same-as-selected";
-            break;
-          }
-        }
-        //EVENT
-        h.click();
-      });
-      divOptBox.appendChild(divOpt);
-    }
-    divCustomBox[i].appendChild(divOptBox);
-
-    divOptSel.addEventListener("click", function (e) {
-      console.log("divOptSel Clic");
-      console.log(e.target);
-      console.log(this);
-      /*when the select box is clicked, close any other select boxes,
-      and open/close the current select box:*/
-      e.stopPropagation();
-
-      //closeAllSelect(this);
-
-      //toogle class (rm / add) divOptBox
-      console.log(this.nextSibling);
-      e.target.nextSibling.classList.toggle("select-hide");
-      console.log(this.nextSibling);
-
-      //move arrow
-      e.target.classList.toggle("select-arrow-active");
-      console.log(this);
-    });
-  }
-  function closeAllSelect(elmnt) {
-    /*a function that will close all select boxes in the document,
-    except the current select box:*/
-    var divOptBox,
-        divOptSel,
-        i,
-        arrNo = [];
-    divOptBox = divRep.getElementsByClassName("select-items");
-    divOptSel = divRep.getElementsByClassName("select-selected");
-    for (i = 0; i < divOptSel.length; i++) {
-      if (elmnt == divOptSel[i]) {
-        arrNo.push(i);
-      } else {
-        divOptSel[i].classList.remove("select-arrow-active");
-      }
-    }
-    for (i = 0; i < divOptBox.length; i++) {
-      if (arrNo.indexOf(i)) {
-        divOptBox[i].classList.add("select-hide");
-      }
-    }
-  }
-  /*if the user clicks anywhere outside the select box,
-  then close all select boxes:*/
-  divRep.addEventListener("click", closeAllSelect);
-}
-
-exports.customSelect = customSelect;
-},{}],34:[function(require,module,exports) {
-'use strict';
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.repTxtTr = undefined;
 
-var _repDragDrop = require('./repDragDrop');
-
-var _customSelect = require('../../viewStyle/customSelect');
+var _repDragDrop = require("./repDragDrop");
 
 function repTxtTr(q, qName, inpuType, divRep) {
   //si type Drag & drop
@@ -1214,12 +1091,11 @@ function repTxtTr(q, qName, inpuType, divRep) {
       //DIVREP ADD NODES
       divRep.appendChild(label);
     }
-    //customSelect(divRep);
   } //end toogle d&d select
 }
 
 exports.repTxtTr = repTxtTr;
-},{"./repDragDrop":41,"../../viewStyle/customSelect":40}],29:[function(require,module,exports) {
+},{"./repDragDrop":40}],27:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1349,7 +1225,7 @@ function loadQ(q, qGameplay, qBox, rangQ, nbreQ) {
 }
 
 exports.loadQ = loadQ;
-},{"./components/headBoxQuiz":26,"./components/intituleQuiz":27,"./components/assetQuiz":28,"./components/reponsesQuiz":29}],24:[function(require,module,exports) {
+},{"./components/headBoxQuiz":24,"./components/intituleQuiz":25,"./components/assetQuiz":26,"./components/reponsesQuiz":27}],28:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1597,7 +1473,7 @@ function RadarChart(id, data, options) {
 } //RadarChart
 
 exports.RadarChart = RadarChart;
-},{}],25:[function(require,module,exports) {
+},{}],29:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -1721,7 +1597,7 @@ function removeAllChild(parentBox) {
 }
 
 exports.loadResult = loadResult;
-},{"./components/RadarChart":24,"./fixtures/RadarData":25}],23:[function(require,module,exports) {
+},{"./components/RadarChart":28,"./fixtures/RadarData":29}],22:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -1859,7 +1735,7 @@ function getCorpus(dataObj) {
     x < qCorpus.length - 1 ? (0, _loadQ.loadQ)(q, gp, qBox, x + 1, qObj.length) : (0, _loadResult.loadResult)(qBox);
   };
 }
-},{"./fixtures/q_demo_export":22,"./qCorpusAleat":18,"./loadQ":19,"./loadResult":20,"./components/startTimer":23}],47:[function(require,module,exports) {
+},{"./fixtures/q_demo_export":21,"./qCorpusAleat":18,"./loadQ":19,"./loadResult":20,"./components/startTimer":22}],42:[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 
@@ -1888,7 +1764,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = '' || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + '50802' + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + '52553' + '/');
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
 
@@ -2029,5 +1905,5 @@ function hmrAccept(bundle, id) {
     return hmrAccept(global.parcelRequire, id);
   });
 }
-},{}]},{},[47,14], null)
+},{}]},{},[42,14], null)
 //# sourceMappingURL=/src.bed03ff9.map
