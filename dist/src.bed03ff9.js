@@ -307,7 +307,7 @@ var demoCorpus = {
 };
 
 exports.demoCorpus = demoCorpus;
-},{}],18:[function(require,module,exports) {
+},{}],19:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -340,7 +340,7 @@ function getRandomQ(max) {
 }
 
 exports.qCorpusAleat = qCorpusAleat;
-},{}],24:[function(require,module,exports) {
+},{}],27:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -368,7 +368,7 @@ function headBoxQuiz(q, qGp, headQuiz, rangQ, nbreQ) {
 }
 
 exports.headBoxQuiz = headBoxQuiz;
-},{}],25:[function(require,module,exports) {
+},{}],24:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -385,7 +385,7 @@ function intituleQuiz(intitule, key) {
 }
 
 exports.intituleQuiz = intituleQuiz;
-},{}],26:[function(require,module,exports) {
+},{}],25:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -512,7 +512,7 @@ function labelCheck(divRep, qType) {
         label.style.backgroundColor = "var(--primary-color)";
         //label.style.border =
         checkmark.style.backgroundColor = "var(--main-ft-color)";
-        //checkmark.style.border
+        checkmark.style.borderColor = "var(--main-ft-color)";
       }
 
       //Si QRM -> on rm active color au click
@@ -520,10 +520,12 @@ function labelCheck(divRep, qType) {
         if (label.style.backgroundColor == "var(--primary-color)") {
           label.style.backgroundColor = lbBgColor;
           checkmark.style.backgroundColor = chkmBgColor;
+          checkmark.style.border = chkmBorder;
         } else {
           //add bg select
           label.style.backgroundColor = "var(--primary-color)";
           checkmark.style.backgroundColor = "var(--main-ft-color)";
+          checkmark.style.borderColor = "var(--main-ft-color)";
         }
       }
     });
@@ -574,10 +576,12 @@ function labelCheckTypeC(divRep, qType, key) {
         for (var x = 0; x < labels.length; x++) {
           labels[x].style.backgroundColor = lbBgColor;
           checkmarks[x].style.backgroundColor = chkmBgColor;
+          checkmarks[x].style.border = chkmBorder;
         }
         //add bg select
         label.style.backgroundColor = "var(--primary-color)";
         checkmark.style.backgroundColor = "var(--main-ft-color)";
+        checkmark.style.borderColor = "var(--main-ft-color)";
       }
 
       //Si QRM -> on rm active color au click
@@ -585,10 +589,12 @@ function labelCheckTypeC(divRep, qType, key) {
         if (label.style.backgroundColor == "var(--primary-color)") {
           label.style.backgroundColor = lbBgColor;
           checkmark.style.backgroundColor = chkmBgColor;
+          checkmark.style.border = chkmBorder;
         } else {
           //add bg select
           label.style.backgroundColor = "var(--primary-color)";
           checkmark.style.backgroundColor = "var(--main-ft-color)";
+          checkmark.style.borderColor = "var(--main-ft-color)";
         }
       }
     });
@@ -687,7 +693,7 @@ function repQr(q, qName, urlImg, inpuType, key, divRep) {
 }
 
 exports.repQr = repQr;
-},{"../../viewStyle/imgCheck":36,"../../viewStyle/labelCheck":35,"../../viewStyle/labelCheckTypeC":37}],39:[function(require,module,exports) {
+},{"../../viewStyle/imgCheck":36,"../../viewStyle/labelCheck":35,"../../viewStyle/labelCheckTypeC":37}],38:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -735,7 +741,7 @@ function repCurseur(q, qName, inpuType, divRep) {
 }
 
 exports.repCurseur = repCurseur;
-},{"../../viewStyle/cursorValue":39}],38:[function(require,module,exports) {
+},{"../../viewStyle/cursorValue":38}],39:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -878,7 +884,7 @@ function repOrdLst(q, divRep) {
 }
 
 exports.repOrdLst = repOrdLst;
-},{"../../viewStyle/dragDropOrdLst":38}],41:[function(require,module,exports) {
+},{"../../viewStyle/dragDropOrdLst":39}],41:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -1095,7 +1101,7 @@ function repTxtTr(q, qName, inpuType, divRep) {
 }
 
 exports.repTxtTr = repTxtTr;
-},{"./repDragDrop":40}],27:[function(require,module,exports) {
+},{"./repDragDrop":40}],26:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1149,7 +1155,7 @@ function reponsesQuiz(q, urlImg, key) {
 }
 
 exports.reponsesQuiz = reponsesQuiz;
-},{"./repGameplay/repQr":31,"./repGameplay/repCurseur":32,"./repGameplay/repOrdLst":33,"./repGameplay/repTxtTr":34}],19:[function(require,module,exports) {
+},{"./repGameplay/repQr":31,"./repGameplay/repCurseur":32,"./repGameplay/repOrdLst":33,"./repGameplay/repTxtTr":34}],18:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1225,7 +1231,7 @@ function loadQ(q, qGameplay, qBox, rangQ, nbreQ) {
 }
 
 exports.loadQ = loadQ;
-},{"./components/headBoxQuiz":24,"./components/intituleQuiz":25,"./components/assetQuiz":26,"./components/reponsesQuiz":27}],28:[function(require,module,exports) {
+},{"./components/headBoxQuiz":27,"./components/intituleQuiz":24,"./components/assetQuiz":25,"./components/reponsesQuiz":26}],28:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1671,8 +1677,6 @@ var qBox = document.getElementsByClassName('main_quiz')[0];
 var contentQuiz = qBox.getElementsByClassName('content_box_quiz')[0];
 //input Valid => Add event load new question
 var validInput = qBox.getElementsByTagName('input')[0];
-// barre de progression
-var progBox = document.getElementsByClassName('progress')[0];
 
 /* TIMER */
 var chrono = document.getElementById('timer').getElementsByTagName('p')[0];
@@ -1735,7 +1739,7 @@ function getCorpus(dataObj) {
     x < qCorpus.length - 1 ? (0, _loadQ.loadQ)(q, gp, qBox, x + 1, qObj.length) : (0, _loadResult.loadResult)(qBox);
   };
 }
-},{"./fixtures/q_demo_export":21,"./qCorpusAleat":18,"./loadQ":19,"./loadResult":20,"./components/startTimer":22}],42:[function(require,module,exports) {
+},{"./fixtures/q_demo_export":21,"./qCorpusAleat":19,"./loadQ":18,"./loadResult":20,"./components/startTimer":22}],53:[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 
@@ -1764,7 +1768,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = '' || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + '52553' + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + '52818' + '/');
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
 
@@ -1905,5 +1909,5 @@ function hmrAccept(bundle, id) {
     return hmrAccept(global.parcelRequire, id);
   });
 }
-},{}]},{},[42,14], null)
+},{}]},{},[53,14], null)
 //# sourceMappingURL=/src.bed03ff9.map

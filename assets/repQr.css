@@ -16,7 +16,6 @@
 }
 .labelBox:hover{
   background-color: var(--primary-op-color);
-  //color: var(--main-bg-color);
     border: 1px solid var(--main-bg-color);
 }
 

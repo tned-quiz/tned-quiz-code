@@ -31,7 +31,7 @@ function labelCheck(divRep, qType){
         label.style.backgroundColor = "var(--primary-color)";
         //label.style.border =
         checkmark.style.backgroundColor = "var(--main-ft-color)";
-        //checkmark.style.border
+        checkmark.style.borderColor = "var(--main-ft-color)";
       }
 
       //Si QRM -> on rm active color au click
@@ -39,10 +39,12 @@ function labelCheck(divRep, qType){
         if(label.style.backgroundColor == "var(--primary-color)"){
           label.style.backgroundColor = lbBgColor;
           checkmark.style.backgroundColor = chkmBgColor;
+          checkmark.style.border = chkmBorder;
         }else{
           //add bg select
           label.style.backgroundColor = "var(--primary-color)";
           checkmark.style.backgroundColor = "var(--main-ft-color)";
+          checkmark.style.borderColor = "var(--main-ft-color)";
         }
       }
     });

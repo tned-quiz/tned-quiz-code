@@ -16,8 +16,6 @@ var qBox = document.getElementsByClassName('main_quiz')[0];
 var contentQuiz = qBox.getElementsByClassName('content_box_quiz')[0];
 //input Valid => Add event load new question
 var validInput = qBox.getElementsByTagName('input')[0];
-// barre de progression
-var progBox = document.getElementsByClassName('progress')[0];
 
 
 /* TIMER */

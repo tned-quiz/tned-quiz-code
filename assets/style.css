@@ -21,7 +21,7 @@
 
 /* ======= CONTENT BOX QUIZ ======= */
 .content_box_quiz{
-  background-color: var(--secondary-color);
+  //background-color: var(--secondary-color);
   padding: 0 1rem;
   display: grid;
   grid-template-areas:

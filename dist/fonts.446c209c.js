@@ -165,7 +165,7 @@ module.exports = reloadCSS;
         module.hot.dispose(reloadCSS);
         module.hot.accept(reloadCSS);
       
-},{"./fonts\\ds_digital\\DS-DIGIT.ttf":15,"./fonts\\Asap\\Asap-Regular.ttf":16,"./fonts\\Asap\\Asap-Bold.ttf":17,"_css_loader":23}],42:[function(require,module,exports) {
+},{"./fonts\\ds_digital\\DS-DIGIT.ttf":15,"./fonts\\Asap\\Asap-Regular.ttf":17,"./fonts\\Asap\\Asap-Bold.ttf":16,"_css_loader":23}],42:[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 
@@ -194,7 +194,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = '' || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + '52553' + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + '52818' + '/');
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
 
@@ -417,5 +417,5 @@ LazyPromise.prototype.catch = function (onError) {
   return this.promise.catch(onError);
 };
 },{"./bundle-url":30}],0:[function(require,module,exports) {
-var b=require(44);b.load([["DS-DIGIT.04fef36d.ttf",15],["Asap-Regular.b5d23e71.ttf",16],["Asap-Bold.bee5401d.ttf",17]]);
+var b=require(44);b.load([["DS-DIGIT.04fef36d.ttf",15],["Asap-Regular.b5d23e71.ttf",17],["Asap-Bold.bee5401d.ttf",16]]);
 },{}]},{},[42,0], null)
