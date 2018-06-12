@@ -16,15 +16,13 @@ function startTimer(chrono){
     //add style
     if(m > 6){
       chrono.style.color = "crimson";
-    }else if (m > 4) {
-      chrono.style.color = "orange";
     }
     var mm = checkTime(m);
     var ss = checkTime(s);
     chrono.innerHTML =  mm + " : " + ss;
 
     // arret du timer
-    if(m == 100){
+    if(m == 10){
       clearInterval(timer);
       alert('Temps écoulé..');
     }

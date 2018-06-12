@@ -1,14 +1,10 @@
-import {RadarChart} from '../components/RadarChart';
-import {data, radarChartOptions} from '../fixtures/RadarData';
+import {RadarChart} from './components/RadarChart';
+import {data, radarChartOptions} from './fixtures/RadarData';
 
 function loadResult(pageResult){
-  console.log("loadResult");
   var header, content, title, lead, badgeBox, badge, diagBox, diag, btnSite, anchor;
   //clean body...
   removeAllChild(pageResult);
-  /*removeAllChild(navBox);
-  removeAllChild(headResult);*/
-  //removeAllChildExcept(body, resultBox);
 
   //Creat Content RESULT => BADGE & DIAGRADAR
   //diag radar
@@ -77,15 +73,6 @@ function removeAllChild(parentBox){
   //empty content_box_quiz (tantque a enfant => suppr)
   while(parentBox.hasChildNodes()){
     parentBox.removeChild(parentBox.firstChild);
-  }
-}
-
-function removeAllChildExcept(parentBox, safeChild){
-  //empty content_box_quiz (tantque a enfant => suppr)
-  while(parentBox.hasChildNodes()){
-    if(parentBox.firstChild !== safeChild){
-      parentBox.removeChild(parentBox.firstChild);
-    }
   }
 }
 

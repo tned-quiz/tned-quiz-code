@@ -1,17 +1,13 @@
 //getData demoCorpus
-import {demoCorpus} from '../fixtures/q_demo_export';
-
-import {qCorpusAleat} from '../control/qCorpusAleat';
+import {demoCorpus} from './fixtures/q_demo_export';
+import {qCorpusAleat} from './qCorpusAleat';
 //CONTENT LOAD question
-import {loadQ} from '../scripts/loadQ';
+import {loadQ} from './loadQ';
 //CONTENT LOAD RESULTS
-import {loadResult} from '../scripts/loadResult';
+import {loadResult} from './loadResult';
 
 //TIMER
-import {startTimer} from '../components/startTimer';
-//PROGRESS BAR
-import {progressBar} from '../components/progressBar';
-import {progressBarInit} from '../components/progressBar';
+import {startTimer} from './components/startTimer';
 
 
 /********* Recupération des elmts du DOM *********/
@@ -30,11 +26,6 @@ startTimer(chrono);
 
 
 /********* Récupération des data JSON *********/
-/*var requestURL = 'fixtures/q_demo.json';
-getData(requestURL, data => {
-  getCorpus(data);
-});*/
-console.log(demoCorpus);
 getCorpus(demoCorpus);
 
 
@@ -48,11 +39,9 @@ function getCorpus(dataObj){
 
   //recup gameplays
   const gpId = gameObj.map(gp => gp.id);
-  console.log(gpId);
 
   //fct° return q -  array questions aleatoires du corpus
   var qCorpus = qCorpusAleat(qObj.length);
-  console.log(qCorpus);
 
   //init Index & chrg 1ere Q
   var x = 0;
@@ -63,19 +52,15 @@ function getCorpus(dataObj){
 
   //recup data gameplay correspondant
   var gp = gameObj.find(gp => gp.id === q.gameplay);
-  console.log(gp);
 
   //empty content_box_quiz (tantque a enfant => suppr)
   while(contentQuiz.hasChildNodes()){
     contentQuiz.removeChild(contentQuiz.firstChild);
   }
 
-  loadQ(q, gp, qBox, x+1);
-
-  progressBarInit(progBox, qCorpus.length);
+  loadQ(q, gp, qBox, x+1, qObj.length);
 
   validInput.onclick = function(){
-    console.log("valid click!");
     //add control si rep..
     x++;
     q = qObj.find(q => q.id === qCorpus[x]);
@@ -85,15 +70,8 @@ function getCorpus(dataObj){
       contentQuiz.removeChild(contentQuiz.firstChild);
     }
 
-    /* PROGRESS BARRE */
-    progressBar(progBox, x+1);
-
-//test end fin q
-//x = qCorpus.length;
-//test end time
-
     //tant que question & temps sinon endQuiz
-    (x<qCorpus.length-1) ? loadQ(q, gp, qBox, x+1) : loadResult(qBox);
+    (x<qCorpus.length-1) ? loadQ(q, gp, qBox, x+1, qObj.length) : loadResult(qBox);
 
   }
 }

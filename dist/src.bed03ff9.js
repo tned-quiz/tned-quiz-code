@@ -98,7 +98,7 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   // Override the current require with this new one
   return newRequire;
-})({18:[function(require,module,exports) {
+})({22:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -307,7 +307,7 @@ var demoCorpus = {
 };
 
 exports.demoCorpus = demoCorpus;
-},{}],19:[function(require,module,exports) {
+},{}],18:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -340,21 +340,17 @@ function getRandomQ(max) {
 }
 
 exports.qCorpusAleat = qCorpusAleat;
-},{}],25:[function(require,module,exports) {
-'use strict';
+},{}],26:[function(require,module,exports) {
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-function headBoxQuiz(q, qGp, headQuiz, rangQ) {
-  //remove p.typeCode if exist
-  if (headQuiz.getElementsByClassName('typeCode').length !== 0) {
-    headQuiz.removeChild(headQuiz.getElementsByClassName('typeCode')[0]);
-  }
+function headBoxQuiz(q, qGp, headQuiz, rangQ, nbreQ) {
 
   // TITLE - Question N°
   var title = headQuiz.getElementsByClassName('title')[0];
-  title.innerHTML = "Question " + rangQ;
+  title.innerHTML = "Question " + rangQ + " / " + nbreQ;
 
   //GAMEPLAY
   var leadGp = headQuiz.getElementsByClassName('gameplay')[0];
@@ -369,18 +365,10 @@ function headBoxQuiz(q, qGp, headQuiz, rangQ) {
   //INSTRUCTION
   var instruct = headQuiz.getElementsByClassName('instruct')[0];
   instruct.innerHTML = qGp.instruction;
-
-  //si name...
-  if (q.name) {
-    var lead = document.createElement('p');
-    lead.className = "gameplay typeCode";
-    lead.innerHTML = q.name;
-    headQuiz.insertBefore(lead, instruct);
-  }
 }
 
 exports.headBoxQuiz = headBoxQuiz;
-},{}],26:[function(require,module,exports) {
+},{}],27:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -397,7 +385,7 @@ function intituleQuiz(intitule, key) {
 }
 
 exports.intituleQuiz = intituleQuiz;
-},{}],27:[function(require,module,exports) {
+},{}],28:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -436,7 +424,7 @@ function assetQuiz(q, url, key) {
 }
 
 exports.assetQuiz = assetQuiz;
-},{}],36:[function(require,module,exports) {
+},{}],35:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -485,7 +473,7 @@ function imgCheck(imgClic, qType) {
 }
 
 exports.imgCheck = imgCheck;
-},{}],38:[function(require,module,exports) {
+},{}],36:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -543,7 +531,7 @@ function labelCheck(divRep, qType) {
 }
 
 exports.labelCheck = labelCheck;
-},{}],37:[function(require,module,exports) {
+},{}],38:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -608,7 +596,7 @@ function labelCheckTypeC(divRep, qType, key) {
 }
 
 exports.labelCheckTypeC = labelCheckTypeC;
-},{}],32:[function(require,module,exports) {
+},{}],31:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -699,7 +687,7 @@ function repQr(q, qName, urlImg, inpuType, key, divRep) {
 }
 
 exports.repQr = repQr;
-},{"../../viewStyle/imgCheck":36,"../../viewStyle/labelCheck":38,"../../viewStyle/labelCheckTypeC":37}],39:[function(require,module,exports) {
+},{"../../viewStyle/imgCheck":35,"../../viewStyle/labelCheck":36,"../../viewStyle/labelCheckTypeC":38}],39:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -715,7 +703,7 @@ function cursorValue(curseur, count) {
 }
 
 exports.cursorValue = cursorValue;
-},{}],33:[function(require,module,exports) {
+},{}],32:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -747,7 +735,7 @@ function repCurseur(q, qName, inpuType, divRep) {
 }
 
 exports.repCurseur = repCurseur;
-},{"../../viewStyle/cursorValue":39}],40:[function(require,module,exports) {
+},{"../../viewStyle/cursorValue":39}],37:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -755,8 +743,6 @@ Object.defineProperty(exports, "__esModule", {
 });
 function dragDropOrdLst(dragSpan, gameplay, divRep) {
 
-  console.log("start drag!!!!");
-  console.log(dragSpan.length);
   //start drag&drop
   for (var i = 0; i < dragSpan.length; i++) {
     dragSpan[i].addEventListener("dragstart", function (event) {
@@ -859,7 +845,7 @@ function dragDropOrdLst(dragSpan, gameplay, divRep) {
 }
 
 exports.dragDropOrdLst = dragDropOrdLst;
-},{}],34:[function(require,module,exports) {
+},{}],33:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -892,7 +878,7 @@ function repOrdLst(q, divRep) {
 }
 
 exports.repOrdLst = repOrdLst;
-},{"../../viewStyle/dragDropOrdLst":40}],43:[function(require,module,exports) {
+},{"../../viewStyle/dragDropOrdLst":37}],42:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -990,7 +976,7 @@ function dragDrop(dragSpan, gameplay, divRep) {
 }
 
 exports.dragDrop = dragDrop;
-},{}],42:[function(require,module,exports) {
+},{}],41:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1051,7 +1037,7 @@ function repDragDrop(q, qName, inpuType, divRep) {
 }
 
 exports.repDragDrop = repDragDrop;
-},{"../../viewStyle/dragDrop":43}],41:[function(require,module,exports) {
+},{"../../viewStyle/dragDrop":42}],40:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -1172,7 +1158,7 @@ function customSelect(divRep) {
 }
 
 exports.customSelect = customSelect;
-},{}],35:[function(require,module,exports) {
+},{}],34:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1233,7 +1219,7 @@ function repTxtTr(q, qName, inpuType, divRep) {
 }
 
 exports.repTxtTr = repTxtTr;
-},{"./repDragDrop":42,"../../viewStyle/customSelect":41}],28:[function(require,module,exports) {
+},{"./repDragDrop":41,"../../viewStyle/customSelect":40}],29:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1287,7 +1273,7 @@ function reponsesQuiz(q, urlImg, key) {
 }
 
 exports.reponsesQuiz = reponsesQuiz;
-},{"./repGameplay/repQr":32,"./repGameplay/repCurseur":33,"./repGameplay/repOrdLst":34,"./repGameplay/repTxtTr":35}],20:[function(require,module,exports) {
+},{"./repGameplay/repQr":31,"./repGameplay/repCurseur":32,"./repGameplay/repOrdLst":33,"./repGameplay/repTxtTr":34}],19:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1295,21 +1281,16 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.loadQ = undefined;
 
-var _headBoxQuiz = require('../components/headBoxQuiz');
+var _headBoxQuiz = require('./components/headBoxQuiz');
 
-var _intituleQuiz = require('../components/intituleQuiz');
+var _intituleQuiz = require('./components/intituleQuiz');
 
-var _assetQuiz = require('../components/assetQuiz');
+var _assetQuiz = require('./components/assetQuiz');
 
-var _reponsesQuiz = require('../components/reponsesQuiz');
-
-//Parcel import img
-/*import url from '../assets/img/Question2.jpg';
-import urlImg from '../assets/img/Question2.jpg';
-console.log(url);*/
+var _reponsesQuiz = require('./components/reponsesQuiz');
 
 //Components Content box quiz
-function loadQ(q, qGameplay, qBox, rangQ) {
+function loadQ(q, qGameplay, qBox, rangQ, nbreQ) {
   /********* Recupération des elmts du DOM *********/
   // head_box_quiz elmts
   var headQuiz = qBox.getElementsByClassName('head_box_quiz')[0];
@@ -1320,10 +1301,8 @@ function loadQ(q, qGameplay, qBox, rangQ) {
   var url = './assets/';
   var urlImg = url + 'img/';
 
-  console.log(q);
-
   //headBoxQuiz
-  (0, _headBoxQuiz.headBoxQuiz)(q, qGameplay, headQuiz, rangQ);
+  (0, _headBoxQuiz.headBoxQuiz)(q, qGameplay, headQuiz, rangQ, nbreQ);
 
   //Content Box Quiz
   //Si Q multiples => 1 template/gameplay - plusieurs contents
@@ -1370,7 +1349,7 @@ function loadQ(q, qGameplay, qBox, rangQ) {
 }
 
 exports.loadQ = loadQ;
-},{"../components/headBoxQuiz":25,"../components/intituleQuiz":26,"../components/assetQuiz":27,"../components/reponsesQuiz":28}],29:[function(require,module,exports) {
+},{"./components/headBoxQuiz":26,"./components/intituleQuiz":27,"./components/assetQuiz":28,"./components/reponsesQuiz":29}],24:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1618,7 +1597,7 @@ function RadarChart(id, data, options) {
 } //RadarChart
 
 exports.RadarChart = RadarChart;
-},{}],30:[function(require,module,exports) {
+},{}],25:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -1656,7 +1635,7 @@ var radarChartOptions = exports.radarChartOptions = {
 	roundStrokes: true,
 	color: color
 };
-},{}],21:[function(require,module,exports) {
+},{}],20:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1664,18 +1643,14 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.loadResult = undefined;
 
-var _RadarChart = require('../components/RadarChart');
+var _RadarChart = require('./components/RadarChart');
 
-var _RadarData = require('../fixtures/RadarData');
+var _RadarData = require('./fixtures/RadarData');
 
 function loadResult(pageResult) {
-  console.log("loadResult");
   var header, content, title, lead, badgeBox, badge, diagBox, diag, btnSite, anchor;
   //clean body...
   removeAllChild(pageResult);
-  /*removeAllChild(navBox);
-  removeAllChild(headResult);*/
-  //removeAllChildExcept(body, resultBox);
 
   //Creat Content RESULT => BADGE & DIAGRADAR
   //diag radar
@@ -1745,17 +1720,8 @@ function removeAllChild(parentBox) {
   }
 }
 
-function removeAllChildExcept(parentBox, safeChild) {
-  //empty content_box_quiz (tantque a enfant => suppr)
-  while (parentBox.hasChildNodes()) {
-    if (parentBox.firstChild !== safeChild) {
-      parentBox.removeChild(parentBox.firstChild);
-    }
-  }
-}
-
 exports.loadResult = loadResult;
-},{"../components/RadarChart":29,"../fixtures/RadarData":30}],22:[function(require,module,exports) {
+},{"./components/RadarChart":24,"./fixtures/RadarData":25}],23:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -1781,15 +1747,13 @@ function startTimer(chrono) {
     //add style
     if (m > 6) {
       chrono.style.color = "crimson";
-    } else if (m > 4) {
-      chrono.style.color = "orange";
     }
     var mm = checkTime(m);
     var ss = checkTime(s);
     chrono.innerHTML = mm + " : " + ss;
 
     // arret du timer
-    if (m == 100) {
+    if (m == 10) {
       clearInterval(timer);
       alert('Temps écoulé..');
     }
@@ -1804,53 +1768,20 @@ function checkTime(i) {
 }
 
 exports.startTimer = startTimer;
-},{}],23:[function(require,module,exports) {
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-function progressBar(progBox, step) {
-  var progBar = progBox.getElementsByTagName('progress')[0];
-  var progCount = progBox.getElementsByClassName('progress_count')[0];
-  progBar.innerHTML = progBar.innerHTML.replace(progBar.value, step);
-  //add value count
-  progCount.innerHTML = progCount.innerHTML.replace(progBar.value, step);
-  //en %
-  //progCount.innerHTML = Math.floor((step/max)*100)+" %";
-  progBar.value = step;
-}
-
-//init PROGESSBAR
-function progressBarInit(progBox, max) {
-  var progBar = progBox.getElementsByTagName('progress')[0];
-  progBar.max = max;
-  progBar.value = 1;
-  progBar.innerHTML = "1 / " + max;
-  var progCount = progBox.getElementsByClassName('progress_count')[0];
-  progCount.innerHTML = "1 / " + max;
-}
-
-exports.progressBar = progressBar;
-exports.progressBarInit = progressBarInit;
 },{}],14:[function(require,module,exports) {
 'use strict';
 
-var _q_demo_export = require('../fixtures/q_demo_export');
+var _q_demo_export = require('./fixtures/q_demo_export');
 
-var _qCorpusAleat = require('../control/qCorpusAleat');
+var _qCorpusAleat = require('./qCorpusAleat');
 
-var _loadQ = require('../scripts/loadQ');
+var _loadQ = require('./loadQ');
 
-var _loadResult = require('../scripts/loadResult');
+var _loadResult = require('./loadResult');
 
-var _startTimer = require('../components/startTimer');
-
-var _progressBar = require('../components/progressBar');
+var _startTimer = require('./components/startTimer');
 
 /********* Recupération des elmts du DOM *********/
-
-//PROGRESS BAR
 
 //CONTENT LOAD RESULTS
 var qBox = document.getElementsByClassName('main_quiz')[0];
@@ -1872,11 +1803,6 @@ var chrono = document.getElementById('timer').getElementsByTagName('p')[0];
 (0, _startTimer.startTimer)(chrono);
 
 /********* Récupération des data JSON *********/
-/*var requestURL = 'fixtures/q_demo.json';
-getData(requestURL, data => {
-  getCorpus(data);
-});*/
-console.log(_q_demo_export.demoCorpus);
 getCorpus(_q_demo_export.demoCorpus);
 
 /********* Fct° JS de traitement des data *********/
@@ -1890,11 +1816,9 @@ function getCorpus(dataObj) {
   var gpId = gameObj.map(function (gp) {
     return gp.id;
   });
-  console.log(gpId);
 
   //fct° return q -  array questions aleatoires du corpus
   var qCorpus = (0, _qCorpusAleat.qCorpusAleat)(qObj.length);
-  console.log(qCorpus);
 
   //init Index & chrg 1ere Q
   var x = 0;
@@ -1909,19 +1833,15 @@ function getCorpus(dataObj) {
   var gp = gameObj.find(function (gp) {
     return gp.id === q.gameplay;
   });
-  console.log(gp);
 
   //empty content_box_quiz (tantque a enfant => suppr)
   while (contentQuiz.hasChildNodes()) {
     contentQuiz.removeChild(contentQuiz.firstChild);
   }
 
-  (0, _loadQ.loadQ)(q, gp, qBox, x + 1);
-
-  (0, _progressBar.progressBarInit)(progBox, qCorpus.length);
+  (0, _loadQ.loadQ)(q, gp, qBox, x + 1, qObj.length);
 
   validInput.onclick = function () {
-    console.log("valid click!");
     //add control si rep..
     x++;
     q = qObj.find(function (q) {
@@ -1935,18 +1855,11 @@ function getCorpus(dataObj) {
       contentQuiz.removeChild(contentQuiz.firstChild);
     }
 
-    /* PROGRESS BARRE */
-    (0, _progressBar.progressBar)(progBox, x + 1);
-
-    //test end fin q
-    //x = qCorpus.length;
-    //test end time
-
     //tant que question & temps sinon endQuiz
-    x < qCorpus.length - 1 ? (0, _loadQ.loadQ)(q, gp, qBox, x + 1) : (0, _loadResult.loadResult)(qBox);
+    x < qCorpus.length - 1 ? (0, _loadQ.loadQ)(q, gp, qBox, x + 1, qObj.length) : (0, _loadResult.loadResult)(qBox);
   };
 }
-},{"../fixtures/q_demo_export":18,"../control/qCorpusAleat":19,"../scripts/loadQ":20,"../scripts/loadResult":21,"../components/startTimer":22,"../components/progressBar":23}],44:[function(require,module,exports) {
+},{"./fixtures/q_demo_export":22,"./qCorpusAleat":18,"./loadQ":19,"./loadResult":20,"./components/startTimer":23}],47:[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 
@@ -1975,7 +1888,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = '' || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + '50957' + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + '50802' + '/');
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
 
@@ -2116,5 +2029,5 @@ function hmrAccept(bundle, id) {
     return hmrAccept(global.parcelRequire, id);
   });
 }
-},{}]},{},[44,14], null)
+},{}]},{},[47,14], null)
 //# sourceMappingURL=/src.bed03ff9.map

@@ -1,7 +1,5 @@
 function dragDropOrdLst(dragSpan, gameplay, divRep){
 
-  console.log("start drag!!!!");
-  console.log(dragSpan.length);
   //start drag&drop
   for (var i=0; i<dragSpan.length; i++){
     dragSpan[i].addEventListener("dragstart", function(event){

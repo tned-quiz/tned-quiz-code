@@ -1,12 +1,8 @@
-function headBoxQuiz(q, qGp, headQuiz, rangQ){
-  //remove p.typeCode if exist
-  if(headQuiz.getElementsByClassName('typeCode').length!==0){
-    headQuiz.removeChild(headQuiz.getElementsByClassName('typeCode')[0]);
-  }
+function headBoxQuiz(q, qGp, headQuiz, rangQ, nbreQ){
 
   // TITLE - Question N°
   var title = headQuiz.getElementsByClassName('title')[0];
-  title.innerHTML = "Question "+rangQ;
+  title.innerHTML = "Question "+rangQ+" / "+nbreQ;
 
   //GAMEPLAY
   var leadGp = headQuiz.getElementsByClassName('gameplay')[0];
@@ -20,13 +16,6 @@ function headBoxQuiz(q, qGp, headQuiz, rangQ){
   var instruct = headQuiz.getElementsByClassName('instruct')[0];
   instruct.innerHTML = qGp.instruction;
 
-  //si name...
-  if(q.name){
-    var lead = document.createElement('p');
-    lead.className = "gameplay typeCode";
-    lead.innerHTML = q.name;
-    headQuiz.insertBefore(lead, instruct);
-  }
 }
 
 export {headBoxQuiz};

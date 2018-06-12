@@ -1,15 +1,10 @@
 //Components Content box quiz
-import {headBoxQuiz} from '../components/headBoxQuiz';
-import {intituleQuiz} from '../components/intituleQuiz';
-import {assetQuiz} from '../components/assetQuiz';
-import {reponsesQuiz} from '../components/reponsesQuiz';
+import {headBoxQuiz} from './components/headBoxQuiz';
+import {intituleQuiz} from './components/intituleQuiz';
+import {assetQuiz} from './components/assetQuiz';
+import {reponsesQuiz} from './components/reponsesQuiz';
 
-//Parcel import img
-/*import url from '../assets/img/Question2.jpg';
-import urlImg from '../assets/img/Question2.jpg';
-console.log(url);*/
-
-function loadQ(q, qGameplay, qBox, rangQ){
+function loadQ(q, qGameplay, qBox, rangQ, nbreQ){
   /********* Recupération des elmts du DOM *********/
   // head_box_quiz elmts
   var headQuiz = qBox.getElementsByClassName('head_box_quiz')[0];
@@ -20,10 +15,8 @@ function loadQ(q, qGameplay, qBox, rangQ){
   var url = './assets/';
   var urlImg = url+'img/';
 
-  console.log(q);
-
   //headBoxQuiz
-  headBoxQuiz(q, qGameplay, headQuiz, rangQ);
+  headBoxQuiz(q, qGameplay, headQuiz, rangQ, nbreQ);
 
   //Content Box Quiz
   //Si Q multiples => 1 template/gameplay - plusieurs contents
