@@ -1,5 +1,4 @@
 import {repDragDrop} from './repDragDrop';
-import {customSelect} from '../../viewStyle/customSelect';
 
 function repTxtTr(q, qName, inpuType, divRep){
   //si type Drag & drop
@@ -45,7 +44,6 @@ function repTxtTr(q, qName, inpuType, divRep){
       //DIVREP ADD NODES
       divRep.appendChild(label);
     }
-    //customSelect(divRep);
   }//end toogle d&d select
 }
 
