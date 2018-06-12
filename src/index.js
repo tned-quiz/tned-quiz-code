@@ -46,7 +46,7 @@ function getCorpus(dataObj){
 
   //recup data question
   var q = qObj.find(q => q.id === qCorpus[x]);
-//q=qObj[6];
+q=qObj[7];
 
   //recup data gameplay correspondant
   var gp = gameObj.find(gp => gp.id === q.gameplay);

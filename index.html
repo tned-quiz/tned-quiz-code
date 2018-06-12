@@ -30,23 +30,21 @@
   <!------------------ MAIN QUIZ ------------------>
   <div class="main_quiz">
 
-  <!------------------ BOX QUIZ ------------------>
-    <div class="box_quiz">
+    <!------------ FORM ------------>
+    <form action="" method="post">
 
-      <!------------ FORM ------------>
-      <form action="" method="post">
+        <!------------ head_box_quiz ------------>
+        <div class="head_box_quiz">
+            <!-- Rang question -->
+            <h1 class="title rang_q"></h1>
+            <!-- gameplay -->
+            <h3 class="gameplay"></h3>
+            <!-- instructions -->
+            <p class="instruct"></p>
+        </div>
 
-          <!------------ head_box_quiz ------------>
-          <div class="head_box_quiz">
-              <!-- Rang question -->
-              <h1 class="title rang_q"></h1>
-              <!-- gameplay -->
-              <h3 class="gameplay"></h3>
-              <!-- instructions -->
-              <p class="instruct"></p>
-          </div>
-
-<div class="section_box_quiz">
+        <!------------ section_box_quiz ------------>
+        <div class="section_box_quiz">
           <!------------ TIMER ------------>
           <div id="timer">
               <p>-TIMER-</p>
@@ -62,12 +60,15 @@
             <!-- REPONSE -->
             <div class="reponses"></div>
           </div>
-</div>
+        </div>
+
+        <!------------ valid_box_quiz ------------>
+        <div class="valid_box_quiz">
           <!-- Valid form -->
           <input type="button" name="valid" value="Valider" />
+        </div>
 
-      </form>
-    </div><!-- end .box_quiz -->
+    </form>
 
   </div><!-- end main_quiz -->
 

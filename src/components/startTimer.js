@@ -14,8 +14,8 @@ function startTimer(chrono){
       s=0;
     }
     //add style
-    if(m > 6){
-      chrono.style.color = "crimson";
+    if(m > 8){
+      chrono.style.color = "red";
     }
     var mm = checkTime(m);
     var ss = checkTime(s);

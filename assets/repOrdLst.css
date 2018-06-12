@@ -1,13 +1,22 @@
 /* ==== REPONSES ORD LST==== */
-.reponses ol{
-  font-weight: bold;
+.reponses.ord_lst_rep{
   display: flex;
   flex-flow: column nowrap;
-  justify-content: space-around;
+  justify-content: flex-start;
   align-items: stretch;
 }
+.reponses ol{
+  font-weight: bold;
+  display: grid;
+  grid-template-rows: repeat(auto-fit, minmax(72px, 1fr));
+}
 .reponses li{
-  border: 1px solid yellowgreen;
+  height: 100%;
+  width: 100%;
+  /*display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: stretch;*/
 }
 .reponses .droparea{
   font-weight: normal;
