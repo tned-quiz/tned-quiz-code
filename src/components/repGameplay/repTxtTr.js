@@ -1,10 +1,10 @@
-import {repDragDrop} from './repDragDrop';
+/*import {repDragDrop} from './repDragDrop';*/
 
 function repTxtTr(q, qName, inpuType, divRep){
   //si type Drag & drop
   if(q.type && q.type ==="d&d"){
     inpuType = "text";
-    repDragDrop(q, qName, inpuType, divRep);
+    /*repDragDrop(q, qName, inpuType, divRep);*/
   }else{
     //sinon SELECT
     for(var x in q.reponses){
