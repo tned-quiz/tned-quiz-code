@@ -46,7 +46,7 @@ function getCorpus(dataObj){
 
   //recup data question
   var q = qObj.find(q => q.id === qCorpus[x]);
-//q=qObj[10];
+q=qObj[12];
 
   //recup data gameplay correspondant
   var gp = gameObj.find(gp => gp.id === q.gameplay);
@@ -67,7 +67,7 @@ function getCorpus(dataObj){
     while(contentQuiz.hasChildNodes()){
       contentQuiz.removeChild(contentQuiz.firstChild);
     }
-x=qCorpus.length-1;
+
     //tant que question & temps sinon endQuiz
     (x<qCorpus.length-1) ? loadQ(q, gp, qBox, x+1, qObj.length) : loadResult(qBox);
 
