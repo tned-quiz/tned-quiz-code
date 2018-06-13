@@ -1,5 +1,8 @@
+import {timer} from './components/startTimer';
 function loadResult(pageResult){
   var header, content, title, lead, badgeBox, badge, diagBox, diag, btnSite, anchor;
+  //clear timer
+  clearInterval(timer);
   //clean body...
   removeAllChild(pageResult);
 
