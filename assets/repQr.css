@@ -13,6 +13,7 @@
   margin-top: 1rem;
   position: relative;
   cursor: pointer;
+  min-width: 12rem;
 }
 .labelBox:hover{
   background-color: var(--primary-op-color);

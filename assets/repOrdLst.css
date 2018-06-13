@@ -9,10 +9,13 @@
   font-weight: bold;
   display: grid;
   grid-template-rows: repeat(auto-fit, minmax(72px, 1fr));
+  justify-items: center;
 }
 .reponses li{
   height: 100%;
   width: 100%;
+  max-width: 650px;
+  min-width: 3rem;
   /*display: flex;
   flex-flow: column nowrap;
   justify-content: flex-start;

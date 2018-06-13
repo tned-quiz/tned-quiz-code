@@ -1,5 +1,6 @@
 .txt_tr_rep{
   align-items: stretch;
+  justify-self: center;
 }
 .txt_tr_rep select {
   width: 8rem;
