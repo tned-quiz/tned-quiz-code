@@ -24,7 +24,7 @@ function startTimer(chrono){
     // arret du timer
     if(m==10 || s===0){
       clearInterval(timer);
-      alert('Temps écoulé..');
+      console.log('Temps écoulé..');
     }
   }
 

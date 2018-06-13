@@ -31,7 +31,7 @@ function repTxtTr(q, qName, inpuType, divRep){
 
       //LABEL
       var label = document.createElement('label');
-      label.htmlFor = select.id;
+      //label.htmlFor = select.id;
       //si label array (input au milieu)
       if(Array.isArray(qRepX.label)){
         label.innerHTML = qRepX.label[0];
