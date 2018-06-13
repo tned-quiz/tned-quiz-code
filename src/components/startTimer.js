@@ -22,7 +22,7 @@ function startTimer(chrono){
     chrono.innerHTML =  mm + " : " + ss;
 
     // arret du timer
-    if(m === 10 || s === 0){
+    if(m==10 || s===0){
       clearInterval(timer);
       alert('Temps écoulé..');
     }
