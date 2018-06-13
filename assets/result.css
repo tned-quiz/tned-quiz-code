@@ -98,7 +98,8 @@ button.btn_site:hover{
 	cursor: default;
 }
 .legend {
-	font-family: 'Raleway', sans-serif;
+	font-family: 'Asap';
+  font-size: .8rem !important;
 	fill: #333333;
 }
 
@@ -112,4 +113,8 @@ button.btn_site:hover{
 
 .radarInvisibleCircle{
 	cursor: pointer;
+}
+
+@media all and (max-width: 1200px){
+
 }
