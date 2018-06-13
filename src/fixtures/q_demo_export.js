@@ -132,8 +132,8 @@ var demoCorpus = {
       "reponses" : [
         {"label" : "mettre le pied face au frein", "value" : true},
         {"label" : "observer attentivement la voiture bleue", "value" : true},
-        {"label" : "maintenir mon allure", "value" : false},
-        {"label" : "etablir un contact visue", "value" : true}
+        {"label" : "maintenir son allure", "value" : false},
+        {"label" : "etablir un contact visuel", "value" : true}
       ]
     },
     {
