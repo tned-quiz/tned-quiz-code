@@ -33,12 +33,11 @@ body{
   box-sizing: border-box;
   background-color: var(--main-bg-color);
   font-size: 1rem;
-  display: flex;
-  flex-flow: column nowrap;
+  /*display: flex;
+  flex-flow: column nowrap;*/
 }
 body>*{
   box-sizing: border-box;
-  padding: .4rem;
 }
 
 h1{
@@ -51,5 +50,3 @@ h3{
 label::first-letter{
   text-transform: uppercase;
 }
-
-hr{display: none;}

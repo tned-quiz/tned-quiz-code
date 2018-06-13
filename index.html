@@ -30,28 +30,26 @@
   <!------------------ MAIN QUIZ ------------------>
   <div class="main_quiz">
 
-    <!------------ TIMER ------------>
-    <div id="timer">
-        <p>-TIMER-</p>
-    </div>
+    <!------------ FORM ------------>
+    <form action="" method="post">
 
-  <!------------------ BOX QUIZ ------------------>
-    <div class="box_quiz">
+        <!------------ head_box_quiz ------------>
+        <div class="head_box_quiz">
+            <!-- Rang question -->
+            <h1 class="title rang_q"></h1>
+            <!-- gameplay -->
+            <h3 class="gameplay"></h3>
+            <!-- instructions -->
+            <p class="instruct"></p>
+        </div>
 
-      <!------------ FORM ------------>
-      <form action="" method="post">
-
-          <!------------ head_box_quiz ------------>
-          <div class="head_box_quiz">
-              <!-- Rang question -->
-              <h1 class="title rang_q"></h1>
-              <!-- gameplay -->
-              <h3 class="gameplay"></h3>
-              <!-- instructions -->
-              <p class="instruct"></p>
+        <!------------ section_box_quiz ------------>
+        <div class="section_box_quiz">
+          <!------------ TIMER ------------>
+          <div id="timer">
+              <p>-TIMER-</p>
           </div>
 
-          <hr />
 
           <!------------ content_box_quiz ------------>
           <div class="content_box_quiz">
@@ -62,18 +60,15 @@
             <!-- REPONSE -->
             <div class="reponses"></div>
           </div>
+        </div>
 
+        <!------------ valid_box_quiz ------------>
+        <div class="valid_box_quiz">
           <!-- Valid form -->
           <input type="button" name="valid" value="Valider" />
+        </div>
 
-      </form>
-    </div><!-- end .box_quiz -->
-
-    <!------------------ PROGESS QUIZ ------------------>
-    <div class="progress">
-      <progress max="10" value="16">1 / 10</progress>
-      <span class="progress_count">1</span>
-    </div>
+    </form>
 
   </div><!-- end main_quiz -->
 

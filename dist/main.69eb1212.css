@@ -1,0 +1,53 @@
+/* ================ GENERAL MAIN QUIZ ================ */
+.main_quiz, .box_quiz, .box_quiz form{
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+}
+/* ================ MAIN QUIZ ================ */
+.main_quiz{
+  position: absolute;
+}
+
+/* ================ SECTION QUIZ ================ */
+.section_box_quiz{
+  background-color: var(--secondary-color);
+  margin-top: 2.2rem;
+}
+
+/* ================ TIMER ================ */
+#timer{
+  height: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: .25rem solid var(--primary-color);
+}
+#timer p{
+  margin: 0;
+  font-family: "Digit";
+  font-size: 1.5rem;
+  text-align: center;
+  width: 5.5rem;
+  height: 3.5rem;
+  border-radius: 2.25rem/50%;
+  border: .25rem solid var(--primary-color);
+  color: var(--primary-color);
+  background-color: var(--main-bg-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top: -.5rem;
+}
+
+
+/* ================ BOX QUIZ ================ */
+.box_quiz form{
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  align-items: stretch;
+}

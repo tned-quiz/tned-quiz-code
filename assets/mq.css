@@ -38,26 +38,26 @@
   }
 }
 */
-@media all and (max-width: 1000px){
-  .assets img, .assets video{
-    max-height: 450px;
+@media all and (max-width: 1200px){
+  .content_box_quiz{
+    grid-template-areas: 'intitules intitules' 'assets reponses';
   }
+  .assets{
+    grid-row: 2 / 3;
+  }
+  .assets img, .assets video{
+    max-height: 350px;
+  }
+}
+@media all and (max-width: 1000px){
+
 }
 /* SMARTPHONE lrg < 600px display qBox en long */
 @media all and (max-width: 800px){
-  .head_box_quiz{
-    margin-top: 0;
-  }
   .content_box_quiz{
-    /*grid-template-areas:
-      'assets intitules'
-      'assets reponses';*/
-      display: flex;
-      flex-flow: column nowrap;
-      justify-content: space-around;
-      align-items: stretch;
+    grid-template-areas: 'intitules' 'assets' 'reponses';
   }
   .assets{
-    /*grid-row: 1/2;*/
+    grid-row: 2/3;
   }
 }

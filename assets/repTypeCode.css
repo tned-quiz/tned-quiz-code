@@ -1,5 +1,5 @@
 /* ======= CONTENT BOX QUIZ ======= */
-.content_box_quiz{
+.content_box_quiz.typeCode{
   grid-template-areas:
     'assets intitules'
     'assets reponses'

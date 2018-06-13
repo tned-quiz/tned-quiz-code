@@ -1,0 +1,17 @@
+/* ================ FONT TTF ================ */
+@font-face {
+    font-family: "Digit";
+    src: url("DS-DIGIT.04fef36d.ttf");
+}
+/********** ASAP **********/
+/***Regular***/
+@font-face {
+    font-family: "Asap";
+    src: url("Asap-Regular.b5d23e71.ttf");
+}
+/***Bold***/
+@font-face {
+    font-family: "Asap_bold";
+    src: url("Asap-Bold.bee5401d.ttf");
+    font-weight: bold;
+}
