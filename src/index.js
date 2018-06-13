@@ -67,7 +67,7 @@ function getCorpus(dataObj){
     while(contentQuiz.hasChildNodes()){
       contentQuiz.removeChild(contentQuiz.firstChild);
     }
-x=qCorpus.length-1;
+
     //tant que question & temps sinon endQuiz
     (x<qCorpus.length-1) ? loadQ(q, gp, qBox, x+1, qObj.length) : loadResult(qBox);
 
