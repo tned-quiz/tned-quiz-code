@@ -22,11 +22,16 @@ function loadQ(q, qGameplay, qBox, rangQ, nbreQ){
   //Si Q multiples => 1 template/gameplay - plusieurs contents
   //Q type code
   if(Array.isArray(q.intitules)){
-    contentQuiz.className += " typeCode";
+    if(!contentQuiz.classList.contains("typeCode")){
+      contentQuiz.classList.add("typeCode");
+    }
     //recup la clé des data multiples (en array)
     q.intitules.map((intitule, key) => getContentQ(key));
   }else{
     getContentQ(null);
+    if(contentQuiz.classList.contains("typeCode")){
+      contentQuiz.classList.remove("typeCode");
+    }
   }
 
   function getContentQ(key){
@@ -35,6 +40,9 @@ function loadQ(q, qGameplay, qBox, rangQ, nbreQ){
     var intitule = intituleQuiz(q.intitules, key);
 
     //si ASSETS
+    if(contentQuiz.classList.contains("no_asset")){
+      contentQuiz.classList.remove("no_asset");
+    }
     if(q.assets && q.assets.type != "dossier"){
       var asset = assetQuiz(q, url, key);
     }else{
