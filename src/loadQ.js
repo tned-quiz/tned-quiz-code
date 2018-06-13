@@ -37,6 +37,8 @@ function loadQ(q, qGameplay, qBox, rangQ, nbreQ){
     //si ASSETS
     if(q.assets && q.assets.type != "dossier"){
       var asset = assetQuiz(q, url, key);
+    }else{
+      contentQuiz.className += " no_asset";
     }
 
     //REPONSES

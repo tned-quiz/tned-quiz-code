@@ -1,8 +1,9 @@
 /* ==== REPONSES IMG CLICK==== */
 .reponses.clickImg_rep{
   display: grid;
-  grid-template: 33% 33% 33% / 33% 33% 33%;
-  justify-content: space-around;
+  grid-template: repeat(3, 1fr) / repeat(3, minmax(150px, 20%));
+  //grid-template: 33% 33% 33% / 33% 33% 33%;
+  justify-content: center;
   align-items: stretch;
   align-content: space-around;
 }
