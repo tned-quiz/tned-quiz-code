@@ -1,7 +1,6 @@
 function dragDropOrdLst(dragSpan, gameplay, divRep, dragTxts){
 
   var i, dragged, dataDrop, dragZone;
-  console.log(dragTxts);
 
   //start drag&drop
   for (i=0; i<dragSpan.length; i++){

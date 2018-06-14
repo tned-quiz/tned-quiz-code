@@ -32,6 +32,7 @@ getCorpus(demoCorpus);
 function getCorpus(dataObj){
   //recup object questions => corpus test
   var qObj = dataObj.questions;
+
   //recup object gameplay => intitulés suivant code gamplay
   var gameObj = dataObj.gameplays;
 
@@ -61,15 +62,20 @@ function getCorpus(dataObj){
   validInput.onclick = function(){
     //add control si rep..
     x++;
-    q = qObj.find(q => q.id === qCorpus[x]);
-    gp = gameObj.find(gp => gp.id === q.gameplay);
     //empty content_box_quiz (tantque a enfant => suppr)
     while(contentQuiz.hasChildNodes()){
       contentQuiz.removeChild(contentQuiz.firstChild);
     }
+    if(x==qCorpus.length){
+      loadResult(qBox)
+    }else{
+      q = qObj.find(q => q.id === qCorpus[x]);
+      gp = gameObj.find(gp => gp.id === q.gameplay);
+      loadQ(q, gp, qBox, x+1, qObj.length)
+    }
 
     //tant que question & temps sinon endQuiz
-    (x<qCorpus.length-1) ? loadQ(q, gp, qBox, x+1, qObj.length) : loadResult(qBox);
+    //(x==qCorpus.length) ? loadResult(qBox) : loadQ(q, gp, qBox, x+1, qObj.length);
 
   }
 }
