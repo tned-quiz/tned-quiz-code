@@ -16,7 +16,9 @@
 }
 .reponses li{
   height: 100%;
+  -ms-height: auto;
   min-height: 2rem;
+  max-height: 3rem;
   width: 100%;
   max-width: 650px;
   min-width: 3rem;
@@ -32,6 +34,7 @@
   //padding: .2em;
   margin: .6rem;
   margin-top: 2%;
+  //-ms-margin: auto .6rem;
   //margin-top: .5rem;
   border-radius: .5em;
   border: 1px solid var(--secondary-color);
@@ -40,6 +43,13 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
+}
+@supports (-ms-ime-align:auto) {
+  .reponses .droparea {
+    margin: auto .6rem;
+    position: relative;
+    bottom: 50%;
+  }
 }
 .reponses .droparea:hover{
   background-color: var(--secondary-color);
