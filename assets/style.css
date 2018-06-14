@@ -46,9 +46,11 @@
 .assets img, .assets video{
   display: block;
   height: 100%;
+  height: -webkit-fill-available;
   max-height: 500px;
   margin: auto;
 }
+/*bug chrome png*/
 .assets video{
   cursor: pointer;
 }

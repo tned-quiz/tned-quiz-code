@@ -1,10 +1,10 @@
-import {repDragDrop} from './repDragDrop';
+/*import {repDragDrop} from './repDragDrop';*/
 
 function repTxtTr(q, qName, inpuType, divRep){
   //si type Drag & drop
   if(q.type && q.type ==="d&d"){
     inpuType = "text";
-    repDragDrop(q, qName, inpuType, divRep);
+    /*repDragDrop(q, qName, inpuType, divRep);*/
   }else{
     //sinon SELECT
     for(var x in q.reponses){
@@ -31,7 +31,7 @@ function repTxtTr(q, qName, inpuType, divRep){
 
       //LABEL
       var label = document.createElement('label');
-      label.htmlFor = select.id;
+      //label.htmlFor = select.id;
       //si label array (input au milieu)
       if(Array.isArray(qRepX.label)){
         label.innerHTML = qRepX.label[0];

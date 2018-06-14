@@ -1,15 +1,16 @@
-import {RadarChart} from './components/RadarChart';
-import {data, radarChartOptions} from './fixtures/RadarData';
-
+import {timer} from './components/startTimer';
 function loadResult(pageResult){
   var header, content, title, lead, badgeBox, badge, diagBox, diag, btnSite, anchor;
+  //clear timer
+  clearInterval(timer);
   //clean body...
   removeAllChild(pageResult);
 
   //Creat Content RESULT => BADGE & DIAGRADAR
   //diag radar
-  diag = document.createElement('div');
-  diag.className = "radarChart";
+  diag = document.createElement('img');
+  diag.className = "radarImg";
+  diag.src = "../assets/img/diagramme.png";
   diagBox = document.createElement('div');
   diagBox.className = "diag_box";
   diagBox.appendChild(diag);
@@ -64,10 +65,7 @@ function loadResult(pageResult){
   pageResult.appendChild(btnSite);
   pageResult.className = "page_result";
 
-  //Call function to draw the Radar chart
-	RadarChart(".radarChart", data, radarChartOptions);//! dessin diag suivant windows..->creat & add node before draw!!!
-
-}//end loadResult
+  }//end loadResult
 
 function removeAllChild(parentBox){
   //empty content_box_quiz (tantque a enfant => suppr)
