@@ -84,6 +84,7 @@ function dragDropOrdLst(dragSpan, gameplay, divRep, dragTxts){
     if ((event.target.nodeType==1) && event.target.classList.contains("dropzone")){
       dropTarget = event.target;
       event.target.style.background = "";
+      event.target.parentNode.style.background = "";
     }else if ((event.target.nodeType==3) && event.target.parentNode.classList.contains("dropzone")) {
       dropTarget = event.target.parentNode;
       event.target.parentNode.parentNode.style.background = "";
