@@ -106,3 +106,10 @@ input[name="valid"]:hover{
   color: var(--primary-color);
   border: 1px solid var(--primary-color);
 }
+/*remove focus chrome (border blue)*/
+input[name="valid"]:focus{
+  outline: 0;
+}
+input[name="valid"]:active{
+  outline: none;
+}
